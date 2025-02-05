@@ -1,0 +1,67 @@
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    transition: background 2s ease;
+}
+
+.container {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.revealed {
+    background-color: #f4c2c2;
+    color: black;
+}
+
+.images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 10rem;
+}
+
+#password {
+    width: 235px;
+    padding: 8px;
+    font-size: 1rem;
+}
+
+.handshake {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 8rem;
+}
+
+.conversation {
+    display: flex;
+    flex-direction: column; /* элементы будут располагаться вертикально */
+    gap: 10px; /* расстояние между блоками */
+}
+
+.message {
+    display: flex;
+    align-items: center; /* выравнивание по вертикали */
+}
+
+.message-image {
+    width: 50px; /* размер картинки */
+    height: 50px; /* размер картинки */
+    margin-right: 10px; /* расстояние между картинкой и текстом */
+}
+
+.message-text {
+    max-width: 400px; /* ограничение ширины текста */
+    word-wrap: break-word; /* перенос слов, если они не помещаются */
+}
