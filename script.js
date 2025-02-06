@@ -1,13 +1,11 @@
 function checkPassword() {
     const password = document.getElementById("password").value.trim().toLowerCase();
-    const validPasswords = ["поля", "полина", "полечка", "апполинария", "апполинария"];
+    const validPasswords = ["поля", "полина", "полечка", "апполинария", "аполинария"];
 
     if (validPasswords.includes(password)) {
-        document.getElementById("password-container").style.display = "none";
-        document.body.classList.add("revealed");
+        document.getElementById("password-container").classList.add("hidden");
         const content = document.getElementById("content");
         content.classList.remove("hidden");
-        content.style.display = "block"; // Добавлено на случай, если `hidden` не удаляет `display: none`
     } else {
         alert("Неправильна!😭💔");
     }
