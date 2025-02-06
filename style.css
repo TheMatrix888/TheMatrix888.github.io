@@ -9,6 +9,36 @@ body {
     transition: background 2s ease;
 }
 
+button {
+    background: linear-gradient(135deg, #a78bfa, #fbcfe8);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input {
+    border: 2px solid #a78bfa;  /* Фиолетовая граница */
+    border-radius: 8px;  /* Закруглённые углы */
+    padding: 10px;
+    outline: none; /* Убирает синюю рамку в Chrome */
+}
+
+input::placeholder {
+    color: #d1d5db;
+    font-style: italic;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder {
+    opacity: 0.4;
+}
+
+
 .container {
     text-align: center;
 }
@@ -65,3 +95,10 @@ body {
     max-width: 400px; /* ограничение ширины текста */
     word-wrap: break-word; /* перенос слов, если они не помещаются */
 }
+
+.password-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
