@@ -1,16 +1,14 @@
 body {
     background-color: #f4c2c2;
     color: black;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 90vw;
+    width: 100vw;
     flex-direction: column;
-    transition: background 2s ease;
 }
 
-button {
+.meow-button {
     background: linear-gradient(135deg, #a78bfa, #fbcfe8);
     color: white;
     border: none;
@@ -21,54 +19,94 @@ button {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
+.letter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+.letter-wrapper {
+    position: relative;
+    width: 300px; /* Фиксируем ширину блока, чтобы картинки не смещались */
+    height: auto;
+    z-index: -2;
+}
+
+.letter, .letter-cover, .paper {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.open .letter-cover {
+    transform: rotateX(180deg) translateY(-150px);
+    transform-origin: top;
+    transition: 1.5s ease-in-out;
+}
+
+.paper {
+    height: 290px;
+    width:230px;
+    margin-left: 35px;
+    object-fit:cover;
+    z-index: -3;
+}
+
+@keyframes flyOut {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-300px);
+    }
+    100% {
+        transform: translateY(0px) scale(6);
+    }
+}
+
+.flyOut {
+    animation: flyOut 1.5s ease-in-out forwards;
+    transform-origin: top;
+}
+
+.password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 320px; /* Отступ вниз от письма */
+}
+
 input {
+    text-align: center;
     border: 2px solid #a78bfa;  /* Фиолетовая граница */
     border-radius: 8px;  /* Закруглённые углы */
     padding: 10px;
     outline: none; /* Убирает синюю рамку в Chrome */
+    width: 220px;
 }
 
 input::placeholder {
     color: #d1d5db;
     font-style: italic;
+    text-align: center;
+    font-size: 0.9rem;
     opacity: 0.8;
     transition: opacity 0.3s ease;
 }
 
-
-.container {
-    text-align: center;
-}
-
 .hidden {
-    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-.images {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 10rem;
-}
-
-#password {
-    width: 235px;
-    padding: 8px;
-    font-size: 1rem;
-}
-
-#content {
-    padding-top: 300px; /* Добавляем отступ сверху */
-}
-
-
-.handshake {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 8rem;
+.revealed {
+    opacity: 1;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .conversation {
@@ -80,22 +118,13 @@ input::placeholder {
 .message {
     display: flex;
     align-items: center; /* выравнивание по вертикали */
-}
-
-.message-image {
-    width: 50px; /* размер картинки */
-    height: 50px; /* размер картинки */
-    margin-right: 10px; /* расстояние между картинкой и текстом */
-}
-
-.message-text {
-    max-width: 400px; /* ограничение ширины текста */
-    word-wrap: break-word; /* перенос слов, если они не помещаются */
-}
-
-.password-container {
-    display: flex;
-    flex-direction: column;
     gap: 10px;
 }
 
+.handshake {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 8rem;
+}
