@@ -148,7 +148,7 @@ input::placeholder {
 .valentine-button {
     width: 150px;
     height: 150px;
-    background-color: #6200ea;
+    background: linear-gradient(135deg, #6200ea, #9c4dcc);
     color: white;
     border: none;
     cursor: pointer;
